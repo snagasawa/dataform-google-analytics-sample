@@ -1,0 +1,7 @@
+config {
+  type: "incremental"
+}
+
+select clientId, hits
+from ${ref("google_analytics_sample")}
+${when(incremental(), `where timestamp > (select max(visitStartTime) from ${self()})`)}

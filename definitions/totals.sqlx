@@ -1,0 +1,9 @@
+config {
+  type: "table"
+}
+
+SELECT
+  clientId,
+  totals
+FROM
+  ${ref("google_analytics_sample")}

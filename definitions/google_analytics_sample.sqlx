@@ -3,7 +3,7 @@ config {
 }
 
 SELECT
-  GENERATE_UUID() AS visitorId,
-  * EXCEPT(visitorId)
+  GENERATE_UUID() AS clientId,
+  * EXCEPT(clientId)
 FROM
   `bigquery-public-data.google_analytics_sample.ga_sessions_*`
